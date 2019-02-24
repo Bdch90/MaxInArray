@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class MaxInArray {
+    public static void main(String[] args) {
+        System.out.println("Nhập vào tối đa 20 vị trí để so sánh :");
+        int x = 0;
+        double[] list = new double[20];
+        while ( x < 20 )
+        {
+            double money ;
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Nhập vào số tiền :");
+            money = scanner.nextDouble();
+            double max = list[0];
+            if ( money > 0 )
+            {
+                list[x] = money;
+                x++;
+            }
+            else
+            {
+                System.out.println("Vui lòng nhập lại :");
+            }
+            if (x==20)
+            {
+                int i ;
+                int index = 1;
+                for ( i = 0; i < list.length; i++)
+                {
+                    if (max < list[i])
+                    {
+                        max = list[i];
+                        index = i+1;
+                    }
+                }
+                System.out.println("Lớn nhất hiện tại là : " + max + " tại vị trí " + index);
+                break;
+            }
+        }
+    }
+}
